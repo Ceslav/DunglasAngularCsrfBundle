@@ -49,6 +49,7 @@
             <argument>%dunglas_angular_csrf.cookie.path%</argument>
             <argument>%dunglas_angular_csrf.cookie.domain%</argument>
             <argument>%dunglas_angular_csrf.cookie.secure%</argument>
+            <argument>%dunglas_angular_csrf.cookie.sameSite%</argument>
 
             <tag name="kernel.event_listener" event="kernel.response" method="onKernelResponse" />
         </service>

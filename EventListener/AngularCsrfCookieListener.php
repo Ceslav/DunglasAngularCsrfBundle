@@ -50,6 +50,10 @@ class AngularCsrfCookieListener
      * @var bool
      */
     protected $cookieSecure;
+    /**
+     * @var string|null
+     */
+    protected $cookieSameSite;
 
     /**
      * @param AngularCsrfTokenManager $angularCsrfTokenManager
@@ -60,6 +64,7 @@ class AngularCsrfCookieListener
      * @param string                  $cookiePath
      * @param string                  $cookieDomain
      * @param bool                    $cookieSecure
+     * @param string|null             $cookieSameSite
      */
     public function __construct(
         AngularCsrfTokenManager $angularCsrfTokenManager,
@@ -69,7 +74,8 @@ class AngularCsrfCookieListener
         $cookieExpire,
         $cookiePath,
         $cookieDomain,
-        $cookieSecure
+        $cookieSecure,
+        $cookieSameSite
     ) {
         $this->angularCsrfTokenManager = $angularCsrfTokenManager;
         $this->routeMatcher = $routeMatcher;
@@ -79,6 +85,7 @@ class AngularCsrfCookieListener
         $this->cookiePath = $cookiePath;
         $this->cookieDomain = $cookieDomain;
         $this->cookieSecure = $cookieSecure;
+        $this->cookieSameSite = $cookieSameSite;
     }
 
     /**
@@ -104,7 +111,7 @@ class AngularCsrfCookieListener
             $this->cookieSecure,
             false /* httpOnly */,
             false /* raw */,
-            Cookie::SAMESITE_NONE
+            $this->cookieSameSite
         ));
     }
 }

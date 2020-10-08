@@ -37,6 +37,7 @@ class DunglasAngularCsrfExtension extends Extension
         $container->setParameter('dunglas_angular_csrf.cookie.path', $config['cookie']['path']);
         $container->setParameter('dunglas_angular_csrf.cookie.domain', $config['cookie']['domain']);
         $container->setParameter('dunglas_angular_csrf.cookie.secure', $config['cookie']['secure']);
+        $container->setParameter('dunglas_angular_csrf.cookie.sameSite', $config['cookie']['sameSite']);
         $container->setParameter('dunglas_angular_csrf.cookie.set_on', $config['cookie']['set_on']);
         $container->setParameter('dunglas_angular_csrf.header.name', $config['header']['name']);
         $container->setParameter('dunglas_angular_csrf.secure', $config['secure']);

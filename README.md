@@ -111,6 +111,8 @@ dunglas_angular_csrf:
         domain: ~
         # If true, set the cookie only on HTTPS connection
         secure: false
+        # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite
+        sameSite: lax
         # Patterns of URLs to set the cookie
         set_on:
             - { path: "^/url-pattern", route: "^route_name_pattern$", host: "example.com", methods: [GET, POST] }

@@ -56,6 +56,7 @@ class Configuration implements ConfigurationInterface
                         ->scalarNode('path')->cannotBeEmpty()->defaultValue('/')->end()
                         ->scalarNode('domain')->cannotBeEmpty()->defaultValue(null)->end()
                         ->booleanNode('secure')->defaultFalse()->end()
+                        ->scalarNode('sameSite')->cannotBeEmpty()->defaultValue('lax')->end()
                         ->arrayNode('set_on')
                             ->prototype('array')
                                 ->children()
